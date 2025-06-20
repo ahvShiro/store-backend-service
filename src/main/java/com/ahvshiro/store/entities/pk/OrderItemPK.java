@@ -5,6 +5,7 @@ import java.util.Objects;
 
 import com.ahvshiro.store.entities.Order;
 import com.ahvshiro.store.entities.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
@@ -23,7 +24,7 @@ public class OrderItemPK implements Serializable {
 	@JoinColumn(name = "product_id")
 	private Product product;
 	
-	
+	@JsonIgnore
 	public Order getOrder() {
 		return order;
 	}
